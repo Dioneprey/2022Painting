@@ -1,4 +1,5 @@
 import About from "./components/About"
+import Cards from "./components/Cards"
 import Header from "./components/Header"
 import Hero from "./components/Hero"
 import { styles } from "./styles"
@@ -7,7 +8,7 @@ import { styles } from "./styles"
 function App() {
 
   return (
-    <div className="overflow-x-hidden h-screen font-raleway">
+    <div className="overflow-x-hidden h-screen font-raleway pb-[200px]">
       <div className={`h-[160px]`}>
         <Header />
       </div>
@@ -15,10 +16,11 @@ function App() {
         <div className="absolute w-full h-full bg-black/60 left-0"/>
         <div className="relative"><Hero /> </div>      
       </div>
-      <div className={`h-[600px] ${styles.paddingX}`}>
+      <div className={`flex-col`}>
+        <Cards />
         <About />
       </div>
-
+      
     </div>
   )
 }

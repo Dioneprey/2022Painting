@@ -5,7 +5,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        primaryOrange: '#ff660e'
+        primaryOrange: '#ff660e',
+        secundaryOrange: '#ff7500'
       },
       fontFamily: {
         raleway: ['Raleway', 'sans-serif']

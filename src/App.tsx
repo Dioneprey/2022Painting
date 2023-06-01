@@ -8,17 +8,17 @@ import { styles } from "./styles"
 function App() {
 
   return (
-    <div className="overflow-x-hidden h-screen font-raleway pb-[200px]">
+    <div className="overflow-x-hidden h-screen font-raleway pb-[200px] bg-[#f7f7f7]">
       <div className={`h-[160px]`}>
         <Header />
       </div>
-      <div className={`relative bg-cover bg-center bg-no-repeat bg-[url('./assets/heroimg.jpg')] ${styles.paddingX}`}>
-        <div className="absolute w-full h-full bg-black/60 left-0"/>
+      <div className={`relative bg-cover bg-[#f7f7f7] bg-center bg-no-repeat bg-[url('./assets/heroimg.jpg')] rounded-b-[60px] ${styles.paddingX}`}>
+        <div className="absolute w-full h-full bg-black/60 left-0 rounded-b-[60px]"/>
         <div className="relative"><Hero /> </div>      
       </div>
       <div className={`flex-col`}>
-        <Cards />
         <About />
+        <Cards />
       </div>
       
     </div>

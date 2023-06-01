@@ -1,6 +1,6 @@
 export default function Hero() {
   return (
-    <main className='flex flex-col justify-center text-white items-center pb-24'>
+    <main className='flex flex-col justify-center text-white items-center pb-36'>
       <h1 className='text-[98px] mt-14 font-bold text-primaryOrange'>
         <span className='font-sans'>2022</span>PAINTING
       </h1>

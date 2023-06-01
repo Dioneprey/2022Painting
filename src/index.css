@@ -6,7 +6,7 @@
 
 .gradient__white {
     background: rgb(247,247,247);
-background: linear-gradient(0deg, rgba(247,247,247,1) 19%, rgba(255,255,255,1) 51%);
+    background: linear-gradient(0deg, rgba(247,247,247,1) 19%, rgba(255,255,255,1) 51%);
 }
 
 .divAnimate {

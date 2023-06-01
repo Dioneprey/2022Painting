@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { styles } from "../styles"
 import { Link } from 'react-scroll';
 import logo from '../assets/logo.png'
@@ -8,7 +9,6 @@ export default function Header() {
   const [navBg, setNavBg] = useState(false);
 
   const changenavPyBg = () => {
-    console.log(window.scrollY)
     window.scrollY >= 10 ? setNavPyBg(true) : setNavPyBg(false);
     // window.scrollY >= 300 ? setFloatButton(true) : setFloatButton(false);
 }
@@ -21,7 +21,7 @@ export default function Header() {
   }, [])
 
   return (
-    <header onClick={changenavPyBg} className={`h-[160px] fixed z-50 w-full bg-white drop-shadow-lg`}>
+    <header onClick={changenavPyBg} className={`select-none h-[160px] fixed z-50 w-full bg-white drop-shadow-lg`}>
       <div className={`${styles.paddingHeaderX} flex items-center justify-between border-b border-b-zinc-200 py-2`}>
         <div className="flex gap-2">
           <a className={`${styles.hoverOrangeText} text-zinc-700`} href="https://www.instagram.com/2022painting" target="_blank"><i className="fa-brands fa-instagram text-xl" /></a>

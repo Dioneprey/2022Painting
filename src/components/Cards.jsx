@@ -5,7 +5,7 @@ import houseVector from '../assets/house-vector.png'
 export default function Cards() {
   return (
     <div className='flex h-[500px]'>
-        <div className='flex-1 h-full bg-[#f7f7f7]'>
+        <div className='flex-1 h-full'>
           <div className='hover:scale-105 transition-all duration-300 flex flex-col h-full justify-center gap-5 items-center text-center'>
             <img src={paintVector} alt="paintVector" className='h-[120px]'/>
             <h2 className='text-3xl font-bold'>Unmatched Expertise</h2>
@@ -27,7 +27,7 @@ export default function Cards() {
             </p>
           </div>
         </div>
-        <div className='flex-1 h-full bg-[#f7f7f7]'>
+        <div className='flex-1 h-full'>
           <div className='flex flex-col justify-center gap-5 items-center text-center h-full hover:scale-105 transition-all duration-300'>
           <img src={houseVector} alt="contactVector" className='h-[125px]'/>
             <h2 className='text-3xl font-bold'>Transform Your Home <br />with  2022painting</h2>

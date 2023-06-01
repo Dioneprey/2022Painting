@@ -8,13 +8,12 @@ import Hero from "./components/Hero"
 import Maps from "./components/Maps"
 import Services from "./components/Services"
 import { styles } from "./styles"
-// import { styles } from "./styles"
 
 function App() {
 
   useEffect(() => {
-    const handleIntersection = (entries: any[]) => {
-      entries.forEach((entry: { isIntersecting: any; target: { classList: { add: (arg0: string) => void } } }) => {
+    const handleIntersection = (entries) => {
+      entries.forEach(entry => {
         if (entry.isIntersecting) {          
             entry.target.classList.add('animate');
         }

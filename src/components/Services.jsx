@@ -11,7 +11,7 @@ import service_5 from '../assets/services_5.webp'
 import service_6 from '../assets/services_6.jpg'
 
 function Services() {
-    const ImageComponent = (props: any) => {
+    const ImageComponent = (props) => {
         return (
           <div className="bg-black cursor-pointer relative rounded-lg drop-shadow-xl hover:scale-105 hover:rotate-[0.5deg] transition-all duration-300 ">
             <PhotoProvider>

@@ -1,10 +1,27 @@
 import { styles } from "../styles"
 import { Link } from 'react-scroll';
 import logo from '../assets/logo.png'
+import { useEffect, useState } from "react";
 
 export default function Header() {
+  const [navPyBg, setNavPyBg] = useState(false);
+  const [navBg, setNavBg] = useState(false);
+
+  const changenavPyBg = () => {
+    console.log(window.scrollY)
+    window.scrollY >= 10 ? setNavPyBg(true) : setNavPyBg(false);
+    // window.scrollY >= 300 ? setFloatButton(true) : setFloatButton(false);
+}
+
+  useEffect(() => {
+      window.addEventListener('scroll', changenavPyBg);
+      return () => {
+          window.removeEventListener('scroll', changenavPyBg);
+      }
+  }, [])
+
   return (
-    <header className={`h-[160px] fixed z-50 w-full bg-white drop-shadow-lg`}>
+    <header onClick={changenavPyBg} className={`h-[160px] fixed z-50 w-full bg-white drop-shadow-lg`}>
       <div className={`${styles.paddingHeaderX} flex items-center justify-between border-b border-b-zinc-200 py-2`}>
         <div className="flex gap-2">
           <a className={`${styles.hoverOrangeText} text-zinc-700`} href="https://www.instagram.com/2022painting" target="_blank"><i className="fa-brands fa-instagram text-xl" /></a>

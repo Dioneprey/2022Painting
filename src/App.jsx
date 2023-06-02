@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect } from "react"
 import About from "./components/About"
 import Cards from "./components/Cards"
@@ -8,8 +7,9 @@ import Hero from "./components/Hero"
 import Maps from "./components/Maps"
 import Services from "./components/Services"
 import { styles } from "./styles"
+import Footer from "./components/Footer"
 
-function App() {
+const App = () => {
 
   useEffect(() => {
     const handleIntersection = (entries) => {
@@ -33,17 +33,19 @@ function App() {
   }, []);
 
   return (
-    <div className="overflow-x-hidden h-screen font-raleway pb-[200px] bg-[#f7f7f7]">
+    <div className="w-full h-full overflow-x-hidden font-raleway bg-[#f7f7f7]">
+      <div className="w-full overflow-y-hidden">
       <Header />
       <div className={`mt-[160px] relative bg-cover bg-[#f7f7f7] bg-center bg-no-repeat bg-[url('./assets/heroimg.jpg')] rounded-b-[60px] ${styles.paddingX}`}>
-        <div className="absolute w-full h-full bg-black/60 left-0 rounded-b-[60px]"/>
-        <div id="home" className="relative"><Hero /> </div>      
+        <div id="home" className="absolute w-full h-full bg-black/60 left-0 rounded-b-[60px]"/>
+        <div className="relative">
+          <Hero/>
+        </div>      
       </div>
-      <div className={`flex-col`}>
-        <div>
+        <div >
           <About />
         </div>
-        <div className="divAnimate">
+        <div id="cards" className="divAnimate">
           <Cards />
         </div>
         <div id="services" className="divAnimate">
@@ -51,10 +53,9 @@ function App() {
         </div>
         <div id="contact" className="divAnimate">
           <Contact />
+          <Footer />
         </div>        
-         <Maps />
-      </div>
-      
+      </div> 
     </div>
   )
 }

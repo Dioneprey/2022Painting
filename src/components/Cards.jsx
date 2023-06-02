@@ -4,9 +4,9 @@ import houseVector from '../assets/house-vector.png'
 
 export default function Cards() {
   return (
-    <div className='flex h-[500px]'>
+    <div className='flex sM:flex-row flex-col sM:h-[500px] gap-10'>
         <div className='flex-1 h-full'>
-          <div className='hover:scale-105 transition-all duration-300 flex flex-col h-full justify-center gap-5 items-center text-center'>
+          <div className='hover:scale-105 xs:mx-0 mx-5 transition-all duration-300 flex flex-col h-full justify-center gap-5 items-center text-center'>
             <img src={paintVector} alt="paintVector" className='h-[120px]'/>
             <h2 className='text-3xl font-bold'>Unmatched Expertise</h2>
             <p className='max-w-[450px]'>
@@ -17,7 +17,7 @@ export default function Cards() {
           </div>
         </div>
         <div className='flex-1 text-black h-full  '>
-          <div className='hover:scale-105 transition-all duration-300 flex flex-col justify-center gap-5 items-center text-center h-full'>
+          <div className='hover:scale-105 xs:mx-0 mx-5 transition-all duration-300 flex flex-col justify-center gap-5 items-center text-center h-full'>
           <img src={contactVector} alt="contactVector" className='h-[120px]'/>
             <h2 className='text-3xl font-bold'>Customized Solutions</h2>
             <p className='max-w-[450px]'>
@@ -28,7 +28,7 @@ export default function Cards() {
           </div>
         </div>
         <div className='flex-1 h-full'>
-          <div className='flex flex-col justify-center gap-5 items-center text-center h-full hover:scale-105 transition-all duration-300'>
+          <div className='flex flex-col justify-center gap-5 items-center text-center h-full hover:scale-105 xs:mx-0 mx-5 transition-all duration-300'>
           <img src={houseVector} alt="contactVector" className='h-[125px]'/>
             <h2 className='text-3xl font-bold'>Transform Your Home <br />with  2022painting</h2>
             <p className='max-w-[450px]'>

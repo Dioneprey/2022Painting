@@ -2,7 +2,7 @@ import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api';
 
 const containerStyle = {
     width: '100%',
-    height: '100%'
+    height: '400px'
   };
   
   const center = {
@@ -29,7 +29,7 @@ function Maps() {
         googleMapsApiKey: API_KEY,
       });
   return isLoaded ? (
-    <div className='w-full h-[500px] grayscale'>
+    <div className='grayscale'>
         <GoogleMap
           mapContainerStyle={containerStyle}
           center={center}

@@ -2,9 +2,9 @@
 import { styles } from "../styles"
 import { Link } from 'react-scroll';
 import logo from '../assets/logo.png'
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
-export default function Header() {
+const Header = () => {
   const [navPyBg, setNavPyBg] = useState(false);
   const [navBg, setNavBg] = useState(false);
 
@@ -20,8 +20,10 @@ export default function Header() {
       }
   }, [])
 
+
+
   return (
-    <header onClick={changenavPyBg} className={`select-none h-[160px] fixed z-50 w-full bg-white drop-shadow-lg`}>
+    <header onClick={changenavPyBg} className={`select-none top-0 h-[160px] fixed z-50 w-full bg-white drop-shadow-lg`}>
       <div className={`${styles.paddingHeaderX} flex items-center justify-between border-b border-b-zinc-200 py-2`}>
         <div className="flex gap-2">
           <a className={`${styles.hoverOrangeText} text-zinc-700`} href="https://www.instagram.com/2022painting" target="_blank"><i className="fa-brands fa-instagram text-xl" /></a>
@@ -36,35 +38,39 @@ export default function Header() {
         <div>
           <a href=""><img src={logo} alt="Logo 2022Painting" className="h-28" /></a>
         </div>
-        <ul className="flex gap-5 text-zinc-700">
-          <li className={`${styles.hoverOrangeText} cursor-pointer`}>
+        <ul className="flex gap-5 text-zinc-700 items-center">
+          <li
+            className={`${styles.hoverOrangeText} cursor-pointer`}>            
             <Link
               to="home"
+              spy={true}
               smooth={true}
               duration={500}
-              offset={-50}
+              offset={-200}
               ignoreCancelEvents={true}
-            >
+            > 
               Home
-            </Link>
+            </Link> 
           </li>
-          <li className={`${styles.hoverOrangeText} cursor-pointer`}>
+          <li 
+            className={`${styles.hoverOrangeText} cursor-pointer`}>
             <Link
               to="about"
+              spy={true}
               smooth={true}
               duration={500}
-              offset={-50}
+              offset={-160}
               ignoreCancelEvents={true}
             >
               About
-            </Link>
+            </Link>            
           </li>
           <li className={`${styles.hoverOrangeText} cursor-pointer`}>
             <Link
               to="services"
               smooth={true}
               duration={500}
-              offset={-50}
+              offset={-160}
               ignoreCancelEvents={true}
             >
               Services
@@ -75,15 +81,27 @@ export default function Header() {
               to="contact"
               smooth={true}
               duration={500}
-              offset={-50}
+              offset={-235}
               ignoreCancelEvents={true}
             >
               Contact           
             </Link>
           </li>
-          <li><a className="p-3 bg-[black] hover:bg-primaryOrange text-white transition-colors duration-300" href="">Request a quote</a></li>
+          <li className="p-3 cursor-pointer bg-[black] hover:bg-primaryOrange text-white transition-colors duration-300">
+          <Link
+              to="contact"
+              smooth={true}
+              duration={500}
+              offset={-235}
+              ignoreCancelEvents={true}
+            >
+              Request a quote           
+            </Link>
+          </li>
         </ul>
       </nav>
     </header>
   )
 }
+
+export default Header;

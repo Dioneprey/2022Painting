@@ -40,7 +40,7 @@ export default function Contact() {
         Phone: ${data.phone}<br/>
         `,
       })
-      console.log(response)
+      
       if(response.status === 200) {
         setLoading(false)
         setModalOk(true)

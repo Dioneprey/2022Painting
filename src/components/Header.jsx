@@ -6,24 +6,44 @@ import React, { useEffect, useState } from "react";
 
 const Header = () => {
   const [navPyBg, setNavPyBg] = useState(false);
-  const [navBg, setNavBg] = useState(false);
+  const [floatButton, setFloatButton] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
 
   const changenavPyBg = () => {
     window.scrollY >= 10 ? setNavPyBg(true) : setNavPyBg(false);
-    // window.scrollY >= 300 ? setFloatButton(true) : setFloatButton(false);
+    window.scrollY >= 300 ? setFloatButton(true) : setFloatButton(false);
 }
 
-  useEffect(() => {
-      window.addEventListener('scroll', changenavPyBg);
-      return () => {
-          window.removeEventListener('scroll', changenavPyBg);
-      }
-  }, [])
+useEffect(() => {
+    window.addEventListener('scroll', changenavPyBg);
+    return () => {
+        window.removeEventListener('scroll', changenavPyBg);
+    }
+}, [])
 
   return (
-    <header onClick={changenavPyBg} className={`select-none top-0 sm:h-[160px] h-[90px] fixed z-50 w-full bg-white drop-shadow-lg`}>
-      <div className={`${styles.paddingHeaderX} sm:flex hidden items-center justify-between border-b border-b-zinc-200 py-2`}>
+    <header onClick={changenavPyBg} className={`select-none top-0 ${!navPyBg ? 'sm:h-[160px] h-[90px] ' : 'h-[90px]'}  fixed z-50 w-full bg-white drop-shadow-lg`}>
+            <>
+                {
+                    floatButton ?
+                        <div className={`fixed cursor-pointer hover:text-xl hover:-translate-y-2 
+                                ease-linear duration-200 z-[800] right-10 top-[900%] bg-[#0f1014] border border-zinc-700 
+                                w-[50px] h-[50px] rounded-full text-white flex 
+                                justify-center items-center`}>
+                            <Link
+                                to="home"
+                                smooth={true}
+                                duration={500}
+                                offset={-50}
+                                ignoreCancelEvents={true}
+                            >
+                                <i className="fa-solid fa-arrow-up"></i>
+                            </Link>
+
+                        </div> : ""
+                }
+            </>
+      <div className={`${styles.paddingHeaderX}  ${navPyBg ? 'hidden' : 'sm:flex hidden'} items-center justify-between border-b border-b-zinc-200 py-2`}>
         <div className="flex gap-2">
           <a className={`${styles.hoverOrangeText} text-zinc-700`} href="https://www.instagram.com/2022painting" target="_blank"><i className="fa-brands fa-instagram text-xl" /></a>
           <a className={`${styles.hoverOrangeText} text-zinc-700`} href="https://www.facebook.com/022painting" target="_blank"><i className="fa-brands fa-facebook-f text-xl" /></a>
@@ -33,7 +53,7 @@ const Header = () => {
           <a className={`${styles.hoverOrangeText} text-zinc-700`} href="tel:15083717829"><i className="fa-solid fa-phone" /> +1 (508) 371-7829</a>
         </div>
       </div>
-      <nav className={`${styles.paddingX} flex justify-between sm:h-[115px] h-full items-center relative`}>
+      <nav className={`${styles.paddingX} flex justify-between ${!navPyBg ? 'sm:h-[110px]' : 'sm:h-[90px]'} h-full items-center relative`}>
         <div>
           <Link
             to="home"
@@ -43,7 +63,7 @@ const Header = () => {
             offset={-200}
             ignoreCancelEvents={true}
           > 
-            <img src={logo} alt="Logo 2022Painting" className="cursor-pointer sm:h-28 h-[80px]" />
+            <img src={logo} alt="Logo 2022Painting" className={`cursor-pointer ${!navPyBg ? 'sm:h-28' : 'sm:h-20'} h-[80px]`} />
           </Link> 
         </div>
         <ul className="flex gap-5 text-zinc-700 items-center">

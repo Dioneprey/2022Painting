@@ -1,3 +1,5 @@
+import { Link } from "react-scroll";
+
 export default function Hero() {
   return (
     <main className='flex flex-col justify-center text-white items-center xl:h-[70vh] pb-36'>
@@ -13,8 +15,26 @@ export default function Hero() {
         for all your residential painting needs.
       </p>
       <div className='flex xs:flex-row flex-col ss:gap-10 gap-5 mt-10'>
-        <a className='py-3 px-8 transition-colors duration-300 ss:text-2xl text-xl text-white bg-primaryOrange hover:bg-orange-600' href="">Learn more</a>
-        <a className='py-3 px-8 transition-colors duration-300 ss:text-2xl text-xl text-white bg-transparent border border-white hover:bg-primaryOrange hover:border-transparent hover:text-white' href="">Contact us</a>
+        <Link
+          className='cursor-pointer py-3 px-8 transition-colors duration-300 ss:text-2xl text-xl text-white bg-primaryOrange hover:bg-orange-600'
+          to="about"
+          smooth={true}
+          duration={500}
+          offset={-50}
+          ignoreCancelEvents={true}
+        >
+          Learn more       
+        </Link>
+        <Link
+          className='cursor-pointer py-3 px-8 transition-colors duration-300 ss:text-2xl text-xl text-white bg-transparent border border-white hover:bg-primaryOrange hover:border-transparent hover:text-white'
+          to="contact"
+          smooth={true}
+          duration={500}
+          offset={-50}
+          ignoreCancelEvents={true}
+        >
+          Contact us         
+        </Link>
       </div>
     </main>
   )

@@ -2,7 +2,7 @@ import { styles } from "../styles"
 
 const Footer = () => {
   return (
-    <div className='bg-black text-white'>
+    <div className='bg-[#161616] text-white '>
       <div className={`flex ss:flex-row flex-col justify-between ${styles.paddingX} py-5`}>
         <div className="flex flex-col gap-2">
           <div className="flex gap-2">

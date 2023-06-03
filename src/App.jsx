@@ -34,9 +34,9 @@ const App = () => {
 
   return (
     <div className="w-full h-full overflow-x-hidden font-raleway bg-[#f7f7f7]">
-      <div className="w-full overflow-y-hidden">
+      <div className="w-full overflow-y-hidden overflow-x-hidden">
       <Header />
-      <div className={`mt-[160px] relative bg-cover bg-[#f7f7f7] bg-center bg-no-repeat bg-[url('./assets/heroimg.jpg')] rounded-b-[60px] ${styles.paddingX}`}>
+      <div className={`sm:mt-[160px] mt-[90px] relative bg-cover bg-[#f7f7f7] bg-center bg-no-repeat bg-[url('./assets/heroimg.jpg')] rounded-b-[60px] ${styles.paddingX}`}>
         <div id="home" className="absolute w-full h-full bg-black/60 left-0 rounded-b-[60px]"/>
         <div className="relative">
           <Hero/>
